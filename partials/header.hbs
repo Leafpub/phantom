@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+        {{! Document settings and metadata }}
+        <title>{{@meta.title}}</title>
+        <meta charset="utf-8" />
+        <meta name="designer" content="Hayden Bleasel" />
+        <meta name="rating" content="general" />
+        <meta name="description" content="{{@meta.description}}" />
+
+        {{! iOS, Android and Windows stuff }}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-TileImage" content="{{theme_url 'assets/images/windows-tile.png'}}" />
+        <meta name="msapplication-TileColor" content="#262A2D" />
+
+        {{! Robots and Viewport }}
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        {{! OpenGraph for Facebook }}
+        <meta property="og:title" content="{{@meta.title}}" />
+        <meta property="og:locale" content="en_US" />
+
+        {{! Twitter Card }}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="{{@meta.title}}" />
+
+        {{! Icons }}
+        <link rel="icon" href="{{url @settings.favicon}}" />
+        <link rel="apple-touch-icon" href="{{url @settings.favicon}}" />
+
+        {{! Prerendering and Prefetching }}
+        {{#if @settings.cover}}
+            <link rel="prerender" href="{{url @settings.cover}}" />
+            <link rel="prefetch" href="{{url @settings.cover}}" />
+        {{/if}}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com/" />
+
+        {{! Scripts and Stylesheets }}
+        <link rel="stylesheet" href="{{theme_url 'assets/css/normalize.css'}}" />
+        <link rel="stylesheet" href="{{theme_url 'assets/css/basics.css'}}" />
+        <link rel="stylesheet" href="{{theme_url 'assets/css/animate.css'}}" />
+        <link rel="stylesheet" href="{{theme_url 'assets/css/highlight.css'}}" />
+        <link rel="stylesheet" href="{{theme_url 'assets/css/phantom.css'}}" />
+        <script src="{{theme_url 'assets/js/html5shiv-printshiv.js'}}"></script>
+        <script src="{{theme_url 'assets/js/respond.js'}}"></script>
+
+        {{postleaf_head}}
+    </head>
+    <body class="{{body_class}}">
+        <nav class="animated fadeIn navigation">
+            <div class="container">
+                <a href="{{url @settings.url}}" class="text-right sidebar brand">
+                    {{#if @settings.logo}}<img src="{{url @settings.logo}}" alt="{{@settings.title}}" />{{/if}}
+                </a>
+                <p class="content">{{@settings.title}}</p>
+            </div>
+        </nav>
+        <div class="main">

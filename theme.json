@@ -1,0 +1,9 @@
+{
+    "name": "Phantom",
+    "description": "A fork of the Phantom Ghost theme by @haydenbleasel.",
+    "version": "5.0.1",
+    "requires": "1.0.0",
+    "author": "Cory LaViska",
+    "license": "MIT",
+    "url": "https://github.com/postleaf/phantom"
+}

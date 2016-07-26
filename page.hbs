@@ -1,22 +1,42 @@
-{{!< default}}
+{{!-- The tag below includes the header - partials/header.hbs --}}
+{{> header}}
 
 {{#post}}
 
-    {{> post-meta}}
+    <meta name="author" content="{{#author}}{{name}}{{/author}}" />
+    <meta name="description" content="{{excerpt characters='157'}}..." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{url absolute='true'}}" />
+    <meta property="twitter:url" content="{{url absolute='true'}}" />
+    <meta property="og:description" content="{{excerpt characters='157'}}..." />
+    <meta property="twitter:description" content="{{excerpt characters='157'}}..." />
+    {{#if image}}
+        <meta property="og:image" content="{{image}}" />
+        <meta property="twitter:image" content="{{image}}" />
+    {{/if}}
 
-    <header class="animated fadeIn" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+    <header class="animated fadeIn" {{#if @settings.cover}}style="background-image: url({{url @settings.cover}})"{{/if}}>
         <div class="container" data-stellar-ratio="0.75">
-            {{> title}}
+            <div class="title animated fadeInUp">
+                <h1>{{title editable="true"}}</h1>
+                {{> share}}
+            </div>
             <div class="sidebar text-right meta">
                 <div class="published animated fadeInUp">
                     <strong>Last Updated</strong>
-                    <time datetime="{{date format='YYYY-MM-DD'}}">{{date format='DD MMM YYYY'}}</time>
+                    <time datetime="{{date format='%Y-%m-%d'}}">{{date format='%d %b %Y'}}</time>
                 </div>
             </div>
         </div>
     </header>
 
-{{! Temporary indentation shift for Handlebars issue }}
-{{> content}}
+    <article class="animated fadeIn {{post_class}}">
+        <div class="container">
+            {{content editable="true"}}
+        </div>
+    </article>
 
 {{/post}}
+
+{{!-- The tag below includes the footer - partials/footer.hbs --}}
+{{> footer}}

@@ -1,0 +1,28 @@
+{{!-- The tag below includes the header - partials/header.hbs --}}
+{{> header}}
+
+<header class="animated fadeIn" {{#if @settings.cover}}style="background-image: url({{url @settings.cover}})"{{/if}}>
+    <div class="container" data-stellar-ratio="0.75">
+        <div class="title animated fadeInUp">
+            <h1>
+                {{#if query}}
+                    Searching for “{{query}}”
+                {{else}}
+                    Search
+                {{/if}}
+            </h1>
+            {{#if query}}
+                <strong>{{plural pagination.total_items empty="No posts" singular="% article" plural="% articles"}}</strong>
+            {{/if}}
+        </div>
+    </div>
+</header>
+
+{{#if query}}
+    {{> excerpts}}
+
+    {{> pagination}}
+{{/if}}
+
+{{!-- The tag below includes the footer - partials/footer.hbs --}}
+{{> footer}}

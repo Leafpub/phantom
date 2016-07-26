@@ -1,0 +1,32 @@
+        </div>
+        <footer class="animated fadeIn" id="footer">
+            <div class="container text-center">
+                <form class="search-form" action="{{search_url}}" method="GET">
+                    <input type="search" name="s" placeholder="Search">
+                    <button type="submit">Go</button>
+                </form>
+                <p class="copyright"><span>Made by {{@settings.title}}.</span> <span>Powered by Postleaf.</span></p>
+                <a href="https://github.com/postleaf/phantom" class="theme">Theme: Phantom</a>
+            </div>
+        </footer>
+
+        {{postleaf_foot}}
+
+        {{! Deferred scripts }}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript">
+        if (typeof jQuery == 'undefined') {
+            document.write('<script type="text/javascript" src="{{theme_url 'assets/js/jquery-1.11.3.min.js'}}"></'+'script>');
+        }
+        </script>
+
+        <script src="{{theme_url 'assets/js/fastclick.js'}}"></script>
+        <script src="{{theme_url 'assets/js/stellar.js'}}"></script>
+        <script src="{{theme_url 'assets/js/highlight.js'}}"></script>
+        <script src="{{theme_url 'assets/js/phantom.js'}}"></script>
+        <script src="{{theme_url 'assets/js/jquery.timeago.min.js'}}"></script>
+
+        <script>jQuery(document).ready(function() { jQuery("time.timeago").timeago(); });</script>
+
+    </body>
+</html>

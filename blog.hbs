@@ -1,0 +1,22 @@
+{{!-- The tag below includes the header - partials/header.hbs --}}
+{{> header}}
+
+<meta name="description" content="{{@settings.tagline}}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{@settings.url}}" />
+<meta property="twitter:url" content="{{@settings.url}}" />
+<meta property="og:description" content="{{@settings.tagline}}" />
+<meta property="twitter:description" content="{{@settings.tagline}}" />
+{{#if @settings.cover}}
+    <meta property="og:image" content="{{url @settings.cover}}" />
+    <meta property="twitter:image" content="{{url @settings.cover}}" />
+{{/if}}
+
+{{> cover}}
+
+{{> excerpts}}
+
+{{> pagination}}
+
+{{!-- The tag below includes the footer - partials/footer.hbs --}}
+{{> footer}}

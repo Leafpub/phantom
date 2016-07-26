@@ -1,26 +1,28 @@
-{{!< default}}
+{{!-- The tag below includes the header - partials/header.hbs --}}
+{{> header}}
 
-<header class="animated fadeIn" {{#if author.cover}}style="background-image: url({{author.cover}})"{{/if}}>
-    <div class="container" data-stellar-ratio="0.75">
-        <div class="title animated fadeInUp">
-            {{#author}}
+{{#author}}
+    <header class="animated fadeIn" {{#if cover}}style="background-image: url({{url cover}})"{{/if}}>
+        <div class="container" data-stellar-ratio="0.75">
+            <div class="title animated fadeInUp">
                 <h1>{{name}}</h1>
                 <p>{{bio}}</p>
-            {{/author}}
-        </div>
-        <div class="sidebar text-right meta">
-            <div class="published animated fadeInUp">
-                <div class="author-image">
-                    {{#author}}
-                        <img src="{{image}}" alt="{{name}}" />
-                    {{/author}}
+            </div>
+            <div class="sidebar text-right meta">
+                <div class="published animated fadeInUp">
+                    <div class="author-image">
+                        <img src="{{url avatar}}" alt="{{name}}" />
+                    </div>
+                    <strong class="article-count text-center">{{plural pagination.total_items empty="No posts" singular="% article" plural="% articles"}}</strong>
                 </div>
-                <strong class="article-count text-center">{{plural pagination.total empty="No posts" singular="% article" plural="% articles"}}</strong>
             </div>
         </div>
-    </div>
-</header>
+    </header>
+{{/author}}
 
 {{> excerpts}}
 
-{{pagination}}
+{{> pagination}}
+
+{{!-- The tag below includes the footer - partials/footer.hbs --}}
+{{> footer}}

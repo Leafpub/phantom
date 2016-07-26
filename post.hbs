@@ -1,29 +1,46 @@
-{{!< default}}
+{{!-- The tag below includes the header - partials/header.hbs --}}
+{{> header}}
 
 {{#post}}
 
-    {{> post-meta}}
+    <meta name="author" content="{{#author}}{{name}}{{/author}}" />
+    <meta name="description" content="{{excerpt characters='157'}}..." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{post_url}}" />
+    <meta property="twitter:url" content="{{post_url}}" />
+    <meta property="og:description" content="{{excerpt characters='157'}}..." />
+    <meta property="twitter:description" content="{{excerpt characters='157'}}..." />
+    {{#if image}}
+        <meta property="og:image" content="{{url image}}" />
+        <meta property="twitter:image" content="{{url image}}" />
+    {{/if}}
 
-    <header class="animated fadeIn" {{#if image}}style="background-image: url({{image}})"{{/if}}>
+    <header class="animated fadeIn" {{#if image}}style="background-image: url({{url image}})"{{/if}}>
         <div class="container" data-stellar-ratio="0.75">
-            {{> title}}
+            <div class="title animated fadeInUp">
+                <h1>{{title editable="true"}}</h1>
+                {{> share}}
+            </div>
             {{> sidebar}}
         </div>
     </header>
 
     <div class="push-article">
-
-{{! Temporary indentation shift for Handlebars issue }}
-{{> content}}
-
+        <article class="animated fadeIn {{post_class}}">
+            <div class="container">
+                {{content editable="true"}}
+            </div>
+        </article>
     </div>
 
     <div class="container">
         <div class="author animated fadeIn clearfix">
             {{#author}}
-                <img src="{{image}}" alt="{{name}}" />
+                {{#if avatar}}
+                    <img src="{{url avatar}}" alt="{{name}}" />
+                {{/if}}
                 <div class="info">
-                    <a href="{{url}}" class="name">{{name}}</a>
+                    <a href="{{author_url}}" class="name">{{name}}</a>
                     <p class="bio">{{bio}}</p>
                 </div>
             {{/author}}
@@ -33,3 +50,6 @@
     {{!> comments}}
 
 {{/post}}
+
+{{!-- The tag below includes the footer - partials/footer.hbs --}}
+{{> footer}}

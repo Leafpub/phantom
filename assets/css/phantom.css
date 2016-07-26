@@ -413,6 +413,49 @@ header .share a {
 	position: relative;
 	font-size: 25px;
 }
+.search-form {
+    margin-bottom: 60px;
+}
+.search-form input {
+	color: inherit;
+	border: solid 1px #ddd;
+	background: white;
+	padding: 5px 10px;
+	vertical-align: middle;
+	transition: .3s background-color, .3s border-color;
+}
+.search-form input:focus {
+	border-color: #bbb;
+}
+.search-form button {
+	border: solid 1px #ddd;
+	background: #ddd;
+	color: inherit;
+	vertical-align: middle;
+	padding: 5px 10px;
+	transition: .3s background-color, .3s border-color;
+}
+.search-form button:hover {
+	background-color: #d2d2d2;
+	border-color: #d2d2d2;
+}
+[data-postleaf-id="post:title"],
+[data-postleaf-id="post:content"] {
+    outline: dashed 2px transparent !important;
+    transition: .3s outline-color;
+}
+[data-postleaf-id="post:title"]:hover {
+    outline-color: rgba(255, 255, 255, .5) !important;
+}
+[data-postleaf-id="post:title"]:focus {
+    outline-color: white !important;
+}
+[data-postleaf-id="post:content"]:hover {
+    outline-color: rgba(0, 0, 0, .5) !important;
+}
+[data-postleaf-id="post:content"]:focus {
+    outline-color: black !important;
+}
 @media (max-width: 992px) {
 	.container, .pagination {
 		width:auto;

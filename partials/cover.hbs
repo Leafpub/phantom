@@ -1,4 +1,4 @@
-<header class="animated blog-cover fadeIn" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
-    <h1 class="blog-title">{{@blog.title}}</h1>
-    <h2 class="blog-description">{{@blog.description}}</h2>
+<header class="animated blog-cover fadeIn" {{#if @settings.cover}}style="background-image: url({{url @settings.cover}})"{{/if}}>
+    <h1 class="blog-title">{{@settings.title}}</h1>
+    <h2 class="blog-description">{{@settings.tagline}}</h2>
 </header>
