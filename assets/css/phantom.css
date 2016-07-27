@@ -639,3 +639,43 @@ header .share a {
 		display: none;
 	}
 }
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////
+// Required classes for alignment. We need these because Postleaf generates classes
+// instead of inline styles for alignment.
+//////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-justify {
+    text-align: justify;
+}
+
+img.align-left,
+[data-embed].align-left {
+    float: left;
+    margin-right: 1em;
+}
+
+img.align-center,
+[data-embed].align-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.align-right,
+[data-embed].align-right {
+    float: right;
+    margin-left: 1em;
+}
