@@ -1,12 +1,6 @@
-/*jslint browser:true, unparam:true*/
-/*global $, FastClick, hljs*/
-
 $(function () {
 
     'use strict';
-
-    // Execute FastClick.js
-    FastClick.attach(document.body);
 
     // Expanded article images
     $('article img').parent().addClass('article-image');
@@ -28,9 +22,6 @@ $(function () {
         verticalOffset: 90,
         hideDistantElements: false
     });
-
-    // Execute Highlight.js
-    hljs.initHighlightingOnLoad();
 
     // Social sharing links
     $('#twitter').click(function () {
