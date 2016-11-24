@@ -1,0 +1,19 @@
+{{!-- The tag below includes the header - partials/header.hbs --}}
+{{> header}}
+
+<header class="animated fadeIn" {{#if @settings.cover}}style="background-image: url({{url @settings.cover}})"{{/if}}>
+    <div class="container" data-stellar-ratio="0.75">
+        <div class="title animated fadeInUp">
+            <h1>{{L 'maintenance'}}</h1>
+        </div>
+    </div>
+</header>
+
+<article class="animated fadeIn {{post_class}}">
+    <div class="container">
+        {{content}}
+    </div>
+</article>
+
+{{!-- The tag below includes the footer - partials/footer.hbs --}}
+{{> footer}}

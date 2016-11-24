@@ -1,10 +1,12 @@
         </div>
         <footer class="animated fadeIn" id="footer">
             <div class="container text-center">
+                {{#is @settings.maintenance 'off'}}
                 <form class="search-form" action="{{search_url}}" method="GET">
                     <input type="search" name="s" placeholder="Search">
                     <button type="submit">Go</button>
                 </form>
+                {{/is}}
                 <p class="copyright"><span>Made by {{@settings.title}}.</span> <span>Powered by Leafpub.</span></p>
                 <a href="https://github.com/leafpub/phantom" class="theme">Theme: Phantom</a>
             </div>
