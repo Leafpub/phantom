@@ -439,21 +439,21 @@ header .share a {
 	background-color: #d2d2d2;
 	border-color: #d2d2d2;
 }
-[data-postleaf-id="post:title"],
-[data-postleaf-id="post:content"] {
+[data-leafpub-id="post:title"],
+[data-leafpub-id="post:content"] {
     outline: dashed 2px transparent !important;
     transition: .3s outline-color;
 }
-[data-postleaf-id="post:title"]:hover {
+[data-leafpub-id="post:title"]:hover {
     outline-color: rgba(255, 255, 255, .5) !important;
 }
-[data-postleaf-id="post:title"]:focus {
+[data-leafpub-id="post:title"]:focus {
     outline-color: white !important;
 }
-[data-postleaf-id="post:content"]:hover {
+[data-leafpub-id="post:content"]:hover {
     outline-color: rgba(0, 0, 0, .5) !important;
 }
-[data-postleaf-id="post:content"]:focus {
+[data-leafpub-id="post:content"]:focus {
     outline-color: black !important;
 }
 @media (max-width: 992px) {
@@ -641,7 +641,7 @@ header .share a {
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////
-// Required classes for alignment. We need these because Postleaf generates classes
+// Required classes for alignment. We need these because Leafpub generates classes
 // instead of inline styles for alignment.
 //////////////////////////////////////////////////////////////////////////////////////////////////*/
 
